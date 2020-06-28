@@ -105,6 +105,11 @@ $(document).ready(function() {
 							$.get("api/order/status/",{"external_reference":external_reference},function(data){
 								
 								console.log("Search de Merchant_order:");
+								data.elements.sort(function(a,b){
+									if(a.date_created < b.date_created) return -1;
+									if(a.date_created > b.date_created) return 1;
+									return 0;
+								})								
 								console.log(data);
 
 								var elements = data.elements;
@@ -113,17 +118,8 @@ $(document).ready(function() {
 								console.log(totalElements);
 
 								if(totalElements>0){ 
-									lastElementId = 0;
-									lastElement = 0;
-									
-									elements.forEach(function (el, i){
-										if(el.id > lastElementId){
-											lastElementId = el.id;
-											lastElement = i;
-										}
-									});
-									console.log("el ultimo elemento tiene ID" + lastElementId);
-									var orderStatus = elements[lastElement].status;
+
+									var orderStatus = elements[totalElements-1].status;
 									console.log('Order status de la merchant order: ' + orderStatus)
 
 									$('#orderStatus').text(orderStatus);
