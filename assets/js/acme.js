@@ -109,11 +109,20 @@ $(document).ready(function() {
 
 								var elements = data.elements;
 								var totalElements = data.total;
-								console.log("Elementos:" + totalElements);
+								console.log("Elementos:");
+								console.log(totalElements);
 
 								if(totalElements>0){ 
+									lastElementId = 0;
+									lastElement = 0;
+									elements.forEach(function (el, i){
+										if(el.id > lastElementId){
+											lastElementId = el.id;
+											lastElement = i;
+										}
+									});
 
-									var orderStatus = elements[totalElements-1].status;
+									var orderStatus = elements[lastElement].status;
 									console.log('Order status de la merchant order: ' + orderStatus)
 
 									$('#orderStatus').text(orderStatus);
@@ -148,8 +157,8 @@ $(document).ready(function() {
 							// Comprueba el estado del pago de la orden en servicio de recepción de notificaciones
 
 							$.get("api/notifications/get/",{},function(data){
-								// console.log("Search Notifications:");
-								// console.log(data);
+								console.log("Search Notifications:");
+								console.log(data);
 
 								if(data.status=="opened" && data.external_reference==external_reference){
 						 			

@@ -10,13 +10,19 @@ global $access_token,$collector_id;
 $external_reference = $_REQUEST["external_reference"];
 
 $url = "https://api.mercadopago.com/merchant_orders/search";
- 
+$json = array(
+    'sort' => 'date_created',
+    'criteria' => 'asc'
+);
+ $json = json_encode($json);
+ error_log($json);
+
  // REVISA AQUÍ: Listo
  // Qué método y endpoint de la API de Mercado Pago deberías poner aquí para poder hacer un get 
  // de una merchant_order en base al external_reference recibido?
  // Pista... revísalo bien...
  // Sustituye el método por su correspondiente: get, put, post, delete
 
-curl_call("GET","$url?external_reference=$external_reference&access_token=$access_token","");
+curl_call("GET","$url?external_reference=$external_reference&access_token=$access_token",$json);
 
 ?>
