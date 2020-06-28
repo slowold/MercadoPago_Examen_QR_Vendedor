@@ -1,0 +1,12 @@
+{
+    "name": "slowold/mp-qr",
+    "description": "Proyecto de Certificación Mercadopago QR Vendedor",
+    "type": "mp-qr",
+    "authors": [
+        {
+            "name": "Pablo Varela",
+            "email": "pablops3@gmail.com"
+        }
+    ],
+    "require": {}
+}
