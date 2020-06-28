@@ -109,10 +109,13 @@ $(document).ready(function() {
 
 								var elements = data.elements;
 								var totalElements = data.total;
-								
+								console.log("Elementos:" + totalElements);
+
 								if(totalElements>0){ 
 
 									var orderStatus = elements[totalElements-1].status;
+									console.log('Order status de la merchant order: ' + orderStatus)
+
 									$('#orderStatus').text(orderStatus);
 									$('#loading').html("<img src='assets/img/ajax-loader.gif'>");
 
@@ -126,8 +129,8 @@ $(document).ready(function() {
 									}catch(e){}
 
 									// Si la orden se cerró (pagó) termina el timeout y pinta el JSON resultante y cierra el modal
-
 									if(orderStatus=="closed"){
+										console.log("Cerrada notificacion!");
 										if(cashSound){playSound("cash")};
 										cashSound=false;
 										setTimeout(clearInterval(checkStatus),3000);
@@ -145,8 +148,8 @@ $(document).ready(function() {
 							// Comprueba el estado del pago de la orden en servicio de recepción de notificaciones
 
 							$.get("api/notifications/get/",{},function(data){
-								console.log("Search Notifications:");
-								console.log(data);
+								// console.log("Search Notifications:");
+								// console.log(data);
 
 								if(data.status=="opened" && data.external_reference==external_reference){
 						 			
