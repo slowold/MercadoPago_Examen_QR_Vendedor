@@ -115,13 +115,14 @@ $(document).ready(function() {
 								if(totalElements>0){ 
 									lastElementId = 0;
 									lastElement = 0;
+									
 									elements.forEach(function (el, i){
 										if(el.id > lastElementId){
 											lastElementId = el.id;
 											lastElement = i;
 										}
 									});
-
+									console.log("el ultimo elemento tiene ID" + lastElementId);
 									var orderStatus = elements[lastElement].status;
 									console.log('Order status de la merchant order: ' + orderStatus)
 
