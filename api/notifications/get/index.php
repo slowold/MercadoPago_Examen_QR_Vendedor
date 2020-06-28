@@ -18,6 +18,6 @@ $url= $lastResource;
 
 // Sustituye el método por su correspondiente: get, put, post, delete
 
-curl_call("GET","$url","");
+curl_call("GET","$url?&access_token=$access_token","");
 
  ?>
