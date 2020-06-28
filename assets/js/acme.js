@@ -68,7 +68,7 @@ $(document).ready(function() {
 			
 					// Muestra el código QR en pantalla:
 
-					$('#qr').html("<img with='350px' height='350px' src='"+data.results[0].qr.image+"'>");
+					$('#qr').html("<img with='350px' height='350px' src='" + data.results[0].qr.image + "'>");
 					
 					// REVISA AQUÍ: Listo
 					// Agrega la URL notification_url 
