@@ -10,10 +10,7 @@ global $access_token,$collector_id;
 $external_reference = $_REQUEST["external_reference"];
 
 $url = "https://api.mercadopago.com/merchant_orders/search";
-$json = array(
-    'sort' => 'date_created',
-    'criteria' => 'asc'
-);
+
  $json = json_encode($json);
  error_log($json);
 
@@ -23,6 +20,6 @@ $json = array(
  // Pista... revísalo bien...
  // Sustituye el método por su correspondiente: get, put, post, delete
 
-curl_call("GET","$url?external_reference=$external_reference&access_token=$access_token",$json);
+curl_call("GET","$url?external_reference=$external_reference&access_token=$access_token","");
 
 ?>
