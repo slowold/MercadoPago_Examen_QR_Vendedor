@@ -7,16 +7,16 @@ header('Content-type: application/json');
 include_once '../../global/functions.php';
 global $access_token;	
 
- // REVISA AQUÍ:
+ // REVISA AQUÍ: Listo?
  // Qué método y endpoint de la API de Mercado Pago deberías poner aquí para poder   
- // crear un POS/QR?
+ // crear un POS/QR? // Nota Pablo: Este no esel arcihivo de crear, es el de obtener!
  // Sustituye el método por su correspondiente: get, put, post, delete
 
 
 $external_id = $_REQUEST["external_id"];
-$url="";
+$url="https://api.mercadopago.com/pos";
 
 
-curl_call("put","$url?external_id=$external_id&access_token=$access_token","");
+curl_call("GET","$url?external_id=$external_id&access_token=$access_token","");
 
 ?>

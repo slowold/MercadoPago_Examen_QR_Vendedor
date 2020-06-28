@@ -1,11 +1,14 @@
 <?php
 
-// REVISA AQUÍ:
+// REVISA AQUÍ: Listo?
 // Agrega el access_token que se indica en el ejercicio así como el collector_id y el country_id
 
-$access_token="INGRESA AQUÍ EL ACCESS_TOKEN DEL USUARIO VENDEDOR";
-$collector_id="INGRESA AQUÍ EL COLLECTOR_ID DEL USUARIO VENDEDOR";
-$country_id="INGRESA AQUÍ EL COUNTRY_ID: MLA, MLM, MCO, MLC, MPE, MLU...";
+//$access_token="INGRESA AQUÍ EL ACCESS_TOKEN DEL USUARIO VENDEDOR";
+$access_token="APP_USR-7026946692817220-061822-8b7c9e20631faac22d9e4cfa92a37265-586728271";
+//$collector_id="INGRESA AQUÍ EL COLLECTOR_ID DEL USUARIO VENDEDOR";
+$collector_id="586728271";
+// $country_id="INGRESA AQUÍ EL COUNTRY_ID: MLA, MLM, MCO, MLC, MPE, MLU...";
+$country_id="MLA";
 
 // No tocar el integrator_id para el ejercicio
 $integrator_id_test="XXXXXXX"; 
